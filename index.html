@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RookLab | Quantitative trading infrastructure for digital asset markets</title>
+  <meta name="description" content="RookLab builds software infrastructure for systematic trading, market data, strategy development, risk management and execution across digital asset markets.">
+  <meta name="theme-color" content="#0f1722">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RookLab">
+  <meta property="og:description" content="Quantitative trading infrastructure for digital asset markets.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%238CC5FF' d='M5 3h3v3h2V3h4v3h2V3h3v7l-2 2v6l2 2v2H5v-2l2-2v-6l-2-2V3z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0f1722;
+      --surface: #151f2e;
+      --line: #243246;
+      --line-strong: #3a4c66;
+      --text: #e8ecf2;
+      --muted: #94a1b5;
+      --accent: #8cc5ff;
+      --ink: #0b1220;
+      --existing: #7ed4a6;
+      --planned: #e8c170;
+      --future: #94a1b5;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: #b9dcff; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .skip {
+      position: absolute; left: -999px; top: 8px;
+      background: var(--accent); color: var(--ink); padding: 8px 12px; border-radius: 6px; z-index: 20;
+    }
+    .skip:focus { left: 8px; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 23, 34, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+    .brand svg { width: 22px; height: 22px; color: var(--accent); }
+    .nav { display: flex; align-items: center; gap: 22px; font-size: 0.95rem; }
+    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--text); }
+    .nav .nav-gh { color: var(--text); border: 1px solid var(--line-strong); padding: 6px 12px; border-radius: 6px; }
+    .nav .nav-gh:hover { border-color: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 88px 0 72px; }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(3.6rem, 12vw, 8.5rem);
+      line-height: 0.95;
+      font-weight: 750;
+      letter-spacing: -0.05em;
+    }
+    .hero .tagline {
+      margin: 28px 0 0;
+      max-width: 34ch;
+      font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+      line-height: 1.2;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+    }
+    .hero .lead { margin: 20px 0 0; max-width: 60ch; color: var(--muted); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-block; padding: 12px 20px; border-radius: 6px;
+      font-weight: 600; font-size: 0.98rem; text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: var(--ink); }
+    .btn-primary:hover { background: #b9dcff; color: var(--ink); }
+    .btn-secondary { border-color: var(--line-strong); color: var(--text); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+
+    /* Pipeline (signature element) */
+    .pipeline { margin: 80px 0 0; }
+    .pipe { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    .pipe li { position: relative; padding: 30px 14px 0 0; }
+    .pipe li::before {
+      content: ""; position: absolute; top: 7px; left: 0; right: 0; height: 0;
+      border-top: 2px solid var(--line-strong);
+      transform-origin: left center;
+      animation: draw 0.7s ease-out both; animation-delay: calc(var(--i) * 0.12s);
+    }
+    .pipe li::after {
+      content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--existing);
+      animation: appear 0.4s ease-out both; animation-delay: calc(var(--i) * 0.12s);
+    }
+    .pipe li.future::before { border-top-style: dashed; border-top-color: var(--future); }
+    .pipe li.future::after { background: var(--bg); border: 2px dashed var(--future); }
+    .pipe .step { display: block; font-weight: 650; font-size: 0.98rem; line-height: 1.3; }
+    .pipe .note { display: block; margin-top: 4px; font-size: 0.82rem; line-height: 1.4; color: var(--muted); }
+    .pipeline figcaption { margin-top: 28px; max-width: 70ch; font-size: 0.9rem; color: var(--muted); }
+    @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes drawY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Sections */
+    .section { padding: 96px 0; border-top: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+    .section h2 { margin: 0; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 650; }
+    .section p { margin: 0 0 1em; max-width: 68ch; }
+    .section p.muted, .muted { color: var(--muted); }
+
+    .facts { margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: 140px minmax(0, 1fr); row-gap: 0; max-width: 620px; }
+    .facts dt, .facts dd { margin: 0; padding: 12px 0; border-top: 1px solid var(--line); }
+    .facts dt { color: var(--muted); font-size: 0.95rem; }
+    .facts dd:last-of-type, .facts dt:last-of-type { border-bottom: 1px solid var(--line); }
+
+    /* Status chips */
+    .chip { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+    .chip::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none; }
+    .chip.existing { color: var(--existing); }
+    .chip.existing::before { background: var(--existing); }
+    .chip.planned { color: var(--planned); }
+    .chip.planned::before { border: 2px solid var(--planned); }
+    .chip.future { color: var(--future); }
+    .chip.future::before { border: 2px dashed var(--future); }
+
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 40px; padding: 0; list-style: none; }
+
+    /* Technology */
+    .areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
+    .area { border-top: 1px solid var(--line-strong); padding-top: 20px; }
+    .area h3 { margin: 0 0 6px; font-size: 1.2rem; letter-spacing: -0.01em; }
+    .area .what { margin: 0 0 18px; color: var(--muted); font-size: 1rem; }
+    .row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.97rem; }
+    .row p { margin: 0; max-width: none; }
+    .aside { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line-strong); display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
+    .aside h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .aside p { margin: 8px 0 0; max-width: none; color: var(--muted); font-size: 0.97rem; }
+
+    /* Project */
+    .project { border: 1px solid var(--line-strong); border-radius: 10px; padding: 32px; background: var(--surface); max-width: 760px; }
+    .project h3 { margin: 12px 0 10px; font-size: 1.6rem; letter-spacing: -0.02em; }
+    .project p { max-width: none; }
+    .project .meta { color: var(--muted); font-size: 0.95rem; }
+    .project .link { display: inline-block; margin-top: 8px; font-weight: 600; }
+
+    /* Roadmap: a real sequence, so numbered */
+    .road { list-style: none; margin: 0; padding: 0; max-width: 760px; }
+    .road li { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 8px 16px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--line); }
+    .road li:last-child { border-bottom: 1px solid var(--line); }
+    .road .n { font-family: var(--mono); color: var(--muted); font-size: 0.95rem; }
+    .road h3 { margin: 0; font-size: 1.1rem; }
+    .road p { grid-column: 2 / 3; margin: 4px 0 0; color: var(--muted); font-size: 0.97rem; max-width: 52ch; }
+    .road .chip { grid-column: 3 / 4; grid-row: 1 / 2; }
+    .road-note { margin-top: 20px; color: var(--muted); font-size: 0.92rem; }
+
+    /* Contact */
+    .contact-list { margin: 0; padding: 0; list-style: none; max-width: 620px; }
+    .contact-list li { display: grid; grid-template-columns: 140px minmax(0, 1fr); padding: 14px 0; border-top: 1px solid var(--line); }
+    .contact-list li:last-child { border-bottom: 1px solid var(--line); }
+    .contact-list .k { color: var(--muted); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--line); padding: 40px 0 56px; color: var(--muted); font-size: 0.9rem; }
+    .site-footer p { margin: 0 0 10px; max-width: 80ch; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .areas, .aside { grid-template-columns: 1fr; }
+      .pipe { grid-template-columns: 1fr; }
+      .pipe li { padding: 0 0 22px 36px; }
+      .pipe li::before {
+        top: 0; bottom: 0; left: 7px; right: auto; width: 0; height: auto;
+        border-top: 0; border-left: 2px solid var(--line-strong);
+        transform-origin: top center; animation-name: drawY;
+      }
+      .pipe li.future::before { border-left: 2px dashed var(--future); border-top: 0; }
+      .pipe li::after { top: 2px; }
+      .pipe li:last-child::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .nav a:not(.nav-gh) { display: none; }
+      .hero { padding: 56px 0 48px; }
+      .section { padding: 64px 0; }
+      .project { padding: 22px; }
+      .road li { grid-template-columns: 40px minmax(0, 1fr); }
+      .road .chip { grid-column: 2 / 3; grid-row: 2 / 3; margin-top: 6px; }
+      .road p { grid-row: 3 / 4; }
+      .facts, .contact-list li { grid-template-columns: 110px minmax(0, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .pipe li::before, .pipe li::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="RookLab home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3h3v3h2V3h4v3h2V3h3v7l-2 2v6l2 2v2H5v-2l2-2v-6l-2-2V3z"/></svg>
+        RookLab
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#technology">Technology</a>
+        <a href="#projects">Projects</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-gh" href="https://github.com/Rooklab-dev" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <h1>RookLab</h1>
+        <p class="tagline">Quantitative trading infrastructure for digital asset markets.</p>
+        <p class="lead">Building software for systematic trading, market data, strategy development, risk management and execution across digital asset markets.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/Rooklab-dev" rel="noopener">Explore GitHub</a>
+          <a class="btn btn-secondary" href="#technology">What we're building</a>
+        </div>
+
+        <figure class="pipeline">
+          <ol class="pipe" aria-label="The systematic trading stack RookLab is working toward">
+            <li style="--i:0"><span class="step">Market data</span><span class="note">Prototyped in Hyper-Engine</span></li>
+            <li style="--i:1"><span class="step">Strategy</span><span class="note">Prototyped in Hyper-Engine</span></li>
+            <li style="--i:2"><span class="step">Backtesting</span><span class="note">Prototyped in Hyper-Engine</span></li>
+            <li style="--i:3"><span class="step">Validation</span><span class="note">Prototyped in Hyper-Engine</span></li>
+            <li style="--i:4"><span class="step">Risk</span><span class="note">Prototyped in Hyper-Engine</span></li>
+            <li style="--i:5"><span class="step">Execution</span><span class="note">Prototyped in Hyper-Engine, testnet only</span></li>
+            <li class="future" style="--i:6"><span class="step">Rust core</span><span class="note">Future</span></li>
+            <li class="future" style="--i:7"><span class="step">AI interface</span><span class="note">Future</span></li>
+          </ol>
+          <figcaption>Each filled stage has a working prototype in Hyper-Engine, an existing public project. RookLab's own components are still ahead of us.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap section-grid">
+        <h2>About</h2>
+        <div>
+          <p>RookLab is an independent software company focused on quantitative trading infrastructure for digital asset markets. We are building tools for the parts of systematic trading that developers usually have to assemble themselves: market data, strategy development, backtesting, risk management and execution.</p>
+          <p class="muted">RookLab is founder-led by <a href="https://github.com/Rook0z" rel="noopener">Rook0z</a>, a Python developer who built Hyper-Engine, the technical foundation behind the company.</p>
+          <dl class="facts">
+            <dt>Stage</dt><dd>Early-stage and bootstrapped</dd>
+            <dt>Team</dt><dd>Founder-led</dd>
+            <dt>Released product</dt><dd>None yet. Hyper-Engine is the existing project.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="wrap section-grid">
+        <h2>Technology</h2>
+        <div>
+          <ul class="legend" aria-label="Status key">
+            <li><span class="chip existing">Existing</span> <span class="muted">built and working in Hyper-Engine</span></li>
+            <li><span class="chip planned">Planned</span> <span class="muted">intended RookLab work</span></li>
+            <li><span class="chip future">Future</span> <span class="muted">longer term</span></li>
+          </ul>
+
+          <div class="areas">
+            <article class="area">
+              <h3>Market Data</h3>
+              <p class="what">Reliable infrastructure for working with digital-asset market data.</p>
+              <div class="row"><span class="chip existing">Existing</span><p>Market data ingestion for Hyperliquid.</p></div>
+              <div class="row"><span class="chip planned">Planned</span><p>Historical and real-time trades, candles and funding rates, with order-book data to be evaluated.</p></div>
+            </article>
+
+            <article class="area">
+              <h3>Trading Systems</h3>
+              <p class="what">Tools for building and deploying systematic trading strategies.</p>
+              <div class="row"><span class="chip existing">Existing</span><p>Strategy signals, backtesting and strategy comparison, with indicators written from scratch rather than taken from third-party technical-analysis libraries.</p></div>
+              <div class="row"><span class="chip planned">Planned</span><p>A backtesting engine that accounts for fees, slippage, position sizing and execution assumptions.</p></div>
+            </article>
+
+            <article class="area">
+              <h3>Risk &amp; Execution</h3>
+              <p class="what">Infrastructure for managing risk and executing strategies safely.</p>
+              <div class="row"><span class="chip existing">Existing</span><p>Position sizing, daily loss limits, a maximum number of open positions, order signing and execution on Hyperliquid testnet.</p></div>
+              <div class="row"><span class="chip planned">Planned</span><p>Exposure and drawdown controls, order management and exchange connectivity.</p></div>
+            </article>
+
+            <article class="area">
+              <h3>Quantitative Tooling</h3>
+              <p class="what">Validation and analysis for systematic strategies.</p>
+              <div class="row"><span class="chip existing">Existing</span><p>Out-of-sample testing, walk-forward validation, Monte Carlo trade simulation and Sharpe-based strategy selection.</p></div>
+              <div class="row"><span class="chip planned">Planned</span><p>Parameter sensitivity, robustness testing and regime analysis.</p></div>
+            </article>
+          </div>
+
+          <div class="aside">
+            <div>
+              <h3>Performance</h3>
+              <p>Python for research and prototyping.</p>
+              <p><span class="chip future">Future</span>&nbsp; Rust for performance-critical systems.</p>
+            </div>
+            <div>
+              <h3>How we plan to use AI</h3>
+              <p><span class="chip future">Future</span>&nbsp; An interface that turns a described hypothesis into a structured experiment. Calculations, backtests and statistics stay in deterministic Python and Rust code. A language model never produces the results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap section-grid">
+        <h2>Projects</h2>
+        <div>
+          <article class="project">
+            <span class="chip existing">Existing</span>
+            <h3>Hyper-Engine</h3>
+            <p>A Python-based algorithmic trading framework built for Hyperliquid, covering market data, strategy development, backtesting, risk management and testnet execution.</p>
+            <p class="meta">An existing public project and the technical foundation behind RookLab. It is not a RookLab commercial product. Execution runs on testnet only.</p>
+            <!-- TODO: replace with the exact Hyper-Engine repository URL once confirmed, e.g. https://github.com/Rook0z/Hyper-Engine -->
+            <a class="link" href="https://github.com/Rook0z?tab=repositories&amp;q=hyper" rel="noopener">View on GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="wrap section-grid">
+        <h2>Roadmap</h2>
+        <div>
+          <ol class="road">
+            <li>
+              <span class="n">01</span>
+              <h3>Infrastructure</h3>
+              <span class="chip planned">Planned</span>
+              <p>Market data, strategy and backtesting foundations.</p>
+            </li>
+            <li>
+              <span class="n">02</span>
+              <h3>Quantitative tooling</h3>
+              <span class="chip planned">Planned</span>
+              <p>Validation, risk and execution components.</p>
+            </li>
+            <li>
+              <span class="n">03</span>
+              <h3>Developer platform</h3>
+              <span class="chip future">Future</span>
+              <p>Tools and interfaces for building systematic trading systems.</p>
+            </li>
+            <li>
+              <span class="n">04</span>
+              <h3>High-performance infrastructure</h3>
+              <span class="chip future">Future</span>
+              <p>Rust-based components for performance-critical workloads.</p>
+            </li>
+          </ol>
+          <p class="road-note">This is a direction, not a commitment. We are not publishing dates, and the final shape of the first product is still being decided.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap section-grid">
+        <h2>Contact</h2>
+        <div>
+          <ul class="contact-list">
+            <li><span class="k">Email</span><span id="email-slot">Company email coming soon.</span></li>
+            <li><span class="k">GitHub</span><a href="https://github.com/Rooklab-dev" rel="noopener">github.com/Rooklab-dev</a></li>
+            <li><span class="k">Founder</span><a href="https://github.com/Rook0z" rel="noopener">github.com/Rook0z</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year">2026</span> RookLab. Build systems. Test ideas. Ship infrastructure.</p>
+      <p>RookLab builds software. It does not manage customer funds, provide financial advice or make investment recommendations, and nothing on this site is investment advice. RookLab is independent and is not affiliated with Hyperliquid.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set this once the company email works, e.g. "hello@yourdomain.com".
+    // While empty, the page shows "Company email coming soon."
+    var CONTACT_EMAIL = "";
+
+    (function () {
+      var slot = document.getElementById("email-slot");
+      if (CONTACT_EMAIL && slot) {
+        var a = document.createElement("a");
+        a.href = "mailto:" + CONTACT_EMAIL;
+        a.textContent = CONTACT_EMAIL;
+        slot.textContent = "";
+        slot.appendChild(a);
+      }
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
