@@ -57,20 +57,20 @@ h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.025em;line-height:1.1
 .panel svg{display:block;width:100%;height:auto}
 .panel-note{padding:10px 18px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
 /* sections */
-.sec{padding:104px 0;border-top:1px solid var(--line)}
+.sec{padding:80px 0;border-top:1px solid var(--line)}
 .sec.alt{background:var(--bg2)}
 .kick{display:inline-block;margin-bottom:14px;font-size:.9rem;font-weight:600;color:var(--cyan)}
 .sec h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:800;max-width:20ch}
 .sec .sub{margin:18px 0 0;max-width:62ch;color:var(--muted);font-size:1.1rem}
-.grid{display:grid;gap:22px;margin-top:52px}
+.grid{display:grid;gap:16px;margin-top:36px}
 .g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
-.card{position:relative;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--card);transition:border-color .2s}
+.card{position:relative;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:border-color .2s}
 .card:hover{border-color:var(--line2)}
-.ico{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:rgba(79,140,255,.12);border:1px solid rgba(79,140,255,.3);color:var(--blue);margin-bottom:20px}
-.ico svg{width:22px;height:22px}
-.card h3{font-size:1.2rem;font-weight:700}
-.card p{margin:10px 0 0;color:var(--muted);font-size:.98rem}
-.tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:.8rem;font-weight:600}
+.ico{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:rgba(79,140,255,.12);border:1px solid rgba(79,140,255,.3);color:var(--blue);margin-bottom:14px}
+.ico svg{width:19px;height:19px}
+.card h3{font-size:1.05rem;font-weight:700}
+.card p{margin:8px 0 0;color:var(--muted);font-size:.9rem;line-height:1.55}
+.tag{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:.78rem;font-weight:600}
 .tag::before{content:"";width:8px;height:8px;border-radius:50%}
 .t-ex{color:var(--mint)}.t-ex::before{background:var(--mint)}
 .t-pl{color:var(--amber)}.t-pl::before{border:2px solid var(--amber)}
@@ -83,6 +83,12 @@ h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.025em;line-height:1.1
 .stack li small{display:block;margin-top:4px;color:var(--muted);font-size:.82rem;line-height:1.4}
 .stack li::before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--mint);margin-bottom:14px;box-shadow:0 0 12px rgba(62,224,176,.7)}
 .stack li.fu{border-style:dashed}.stack li.fu::before{background:transparent;border:2px dashed var(--muted);box-shadow:none}
+.pipe{display:flex;flex-wrap:wrap;gap:8px 0;margin:30px 0 0;padding:0;list-style:none;font-size:.85rem;font-weight:600}
+.pipe li{display:flex;align-items:center}
+.pipe li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);margin-right:8px}
+.pipe li:not(:last-child)::after{content:"";width:28px;border-top:1px solid var(--line2);margin:0 12px}
+.pipe li.fu{color:var(--muted)}.pipe li.fu::before{background:transparent;border:1.5px dashed var(--muted)}
+.pipe em{font-style:normal;font-weight:400;color:var(--muted);margin-left:5px}
 /* claude */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .flow{border:1px solid var(--line2);border-radius:18px;background:var(--card);padding:30px}
@@ -193,10 +199,7 @@ h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.025em;line-height:1.1
 <article class="card"><div class="ico"><svg><use href="#i-shield"/></svg></div><h3>Risk and execution</h3><p>Position sizing, daily loss limits, open-position caps, order signing and testnet execution.</p><span class="tag t-ex">Testnet only</span></article>
 <article class="card"><div class="ico"><svg><use href="#i-flask"/></svg></div><h3>Quant tooling</h3><p>Out-of-sample tests, walk-forward validation, Monte Carlo simulation and Sharpe-based selection.</p><span class="tag t-ex">Prototype working</span></article>
 </div>
-<ol class="stack" aria-label="The systematic trading stack">
-<li><b>Market data</b><small>Prototyped</small></li><li><b>Strategy</b><small>Prototyped</small></li><li><b>Backtesting</b><small>Prototyped</small></li><li><b>Validation</b><small>Prototyped</small></li>
-<li><b>Risk</b><small>Prototyped</small></li><li><b>Execution</b><small>Prototyped, testnet only</small></li><li class="fu"><b>Rust core</b><small>Future</small></li><li class="fu"><b>AI interface</b><small>Future</small></li>
-</ol>
+<ol class="pipe" aria-label="Pipeline status"><li>Market data</li><li>Strategy</li><li>Backtesting</li><li>Validation</li><li>Risk</li><li>Execution <em>(testnet)</em></li><li class="fu">Rust core</li><li class="fu">AI interface</li></ol>
 <div class="legend"><span class="tag t-ex" style="margin:0">Built in Hyper-Engine</span><span class="tag t-pl" style="margin:0">Planned RookLab work</span><span class="tag t-fu" style="margin:0">Future</span></div>
 </div></section>
 
