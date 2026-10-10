@@ -191,7 +191,7 @@ h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.12}
 </div></div></section>
 
 <section class="sec" id="planned"><div class="wrap">
-<div class="plan"><span class="st fu">Planned</span><div><h3>AI-assisted development tooling</h3><p>We plan to use Claude to draft experiment specifications, review strategy code and explain test results. A language model will not compute results or place orders. Calculations stay in deterministic code, and a human reviews generated code before it runs.</p></div></div>
+<div class="plan"><span class="st fu">Planned</span><div><h3>AI-assisted development tooling</h3><p>We plan to use language models to draft experiment specifications, review strategy code and explain test results. A language model will not compute results or place orders. Calculations stay in deterministic code, and a human reviews generated code before it runs.</p></div></div>
 </div></section>
 
 <section class="sec alt" id="principles"><div class="wrap">
@@ -232,6 +232,8 @@ b.addEventListener("click",function(){t(!n.classList.contains("open"))});
 n.addEventListener("click",function(e){if(e.target.tagName==="A")t(false)});
 document.getElementById("cp").addEventListener("click",function(){var c=this,v="founder@rooklab.online";function d(){c.textContent="Copied";setTimeout(function(){c.textContent="Copy"},1800)}
 if(navigator.clipboard){navigator.clipboard.writeText(v).then(d,function(){c.textContent=v})}else{c.textContent=v}});
+document.addEventListener("click",function(e){var l=e.target.closest('a[href^="#"]');if(!l)return;var id=l.getAttribute("href").slice(1),t=id?document.getElementById(id):document.body;if(!t)return;e.preventDefault();t.scrollIntoView();if(id){t.setAttribute("tabindex","-1");t.focus({preventScroll:true})}if(location.hash)history.replaceState(null,"",location.pathname+location.search)});
+if(location.hash){var h=document.getElementById(location.hash.slice(1));if(h){h.scrollIntoView();history.replaceState(null,"",location.pathname+location.search)}}
 document.addEventListener("keydown",function(e){if(e.key==="Escape")t(false)});
 </script>
 </body>
