@@ -3,283 +3,236 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RookLab | Quantitative trading infrastructure for digital asset markets</title>
-<meta name="description" content="RookLab builds software infrastructure for systematic trading: market data, strategy development, backtesting, risk management and execution across digital asset markets.">
-<meta name="theme-color" content="#060a14">
+<title>RookLab | Crypto trading systems and infrastructure</title>
+<meta name="description" content="RookLab is an independent, founder-led engineering company building crypto trading systems and infrastructure: execution, backtesting, risk controls and monitoring.">
+<meta name="theme-color" content="#080a0e">
 <link rel="canonical" href="https://rooklab.online/">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAATMElEQVR42u1ba4xdV3X+1tr7nHvvzHjssZtHoVAQBqlQpIJdidKmjsNLkAQSqF3S9kegpS20CuFRgWhVO1J5FEgDQkJQCRBCvMYqhKCAQtI4hgrxwy60lLYoUB5FOMGPsT1zX2fvvb7+OOfce+6dGXs8NhRV3dKZOfece/bZe73Xt9YVACCpImIxxjc55/akkAIUCgAwwABAUV0QwJjEScvM3p9l2edJOhFJ1VwiIiTZjjF+wKvfkZhMRNAYwvKLHsDDzrnbMTUaa3qNiNyYEgsAqgANJhgtEDCAqnAkH/m296/+VZGiXgc2Mkg6AIgx3s2LGDHG26rnfWMuqf7PpZSWNjDHt863phTShza6nqIIPybZaq7jQsM3P5ix7xysGIYEwI35Va+qPBfRmGXOA4gXIOwKgPlkRpAynkYgoKlzKkD3fHMYMFDAiiJEEh5czVQRsbyVKYkVXOTwkxOplMIOioiONg4BSIgrL9CoANTMtKK0NCguLBcpIqIAVEiKipAARKBEvQ+FiK7FrWPHjilJi9EEgApERaAUGT0MEUhJaABQkZFWbI4AYKlbE5ODJevLD2BDIlQ1VfoeG/rGivsj6agEB5VuVPQccZLr6GoEwDAMBLRah1Szj2cmx5cEFz/8ejek3knN/Yl3j17VPs7js8CSf/TRR9OVVwLAlXjkkUcIYA6kjtUBkAYRpaHrJGdXr3/JAQsxxthetSYZr665Um6CALXBciKSQhE+7TO/vxiGJCoOBESkpP5I/6X54rMAVwQyvXyWIilXC6DlowIKIZRqqpIilqwQwQmy2onUwkiBCEEuADJjtMZmZdrYWN7KNIT43SzzTxOR4Ua9gJ9e9fQHjmRYKmrV6yCcd1tFsPU8RhAkx8utJxuzH865HILHrnq4MsExGmhWEnBiQQ3z1HjfZVMBjESt4nyT9tVJiokQlC69+qJovUOTyqiuElBpEJeWYMamttVmYiR5TVaOJLIxpUwt9xK8wJQaNazthN6iFOXatqnIWEJG+9MJDZXpF5Fjl6jV0qud68hISlPFARIlqaf1zTZtBnVqJlnHTIzZgqYdmJRDI0fcqVnfdA2jo948x96hKb5Ny46G1ohU1OWkKsqUkl1GFahXU3KCxnLzUwaYUi9iyiLzfN5lfM6RBWwEWxxLyUQ8Mm2kGtK0GRHwU6uzStBKVrKhtKw5WnNYqoXL6PooRpGpgKGhBBOcnpKOkWpzUgXHhGn4UI7cBVCaCHITVtBPWe0MgHjnvfOKn4vBKTqucduMlc+Q/BKNoJw2s5NGKxBZhqhSmrv6HHXYKhi7pjq6L+eo+SjrbqQhIg07O6k2ZeREWcs9ywTTSpcDdd7r8Yu1AzIlAZ0zZ860tm3bZht9fglLWMDCui9dWlqShYW17693bwlLsv6cpwDsWG+uJCIr+P+xeQmos0E9duzYBR7dhV27gPJrxwDsqvO48f3yH+qpdgE4hmPNGZrToXzn9DxrvHnXLgBIa4n7hkGQ/wtjo6DHhoxgndenlG53zj01xtgbR+QKwGDWhMYAg0JhTfBiIrIyKzGs1bGXNb/PxjWZAkMm56tQG5/nNuz33yUi/11DZ5esAixTVwL4tRjTA9677T/P3A8hfiPL/LUicvZSiCBrAZEkHx9jul9VnxJCGALi1ovipt2SbMQPTXxpKstgHdhy4u74vQKC1m7neQjpgSxz19fgyWb0X9YCI0Uk9fv9J+V5fr+qPnEwKJKqujrQklEkxtVblrV8tqxKk5uYBtcj3loUroFps9jptHwI4VN5nt9Sgah2sUTQNaxoIuk6nc53i6J4Xkrpe+127iylJCJVIiTjPFzWWC+n19282Mxfzxf+NXG0qXsEVMT3+8OYZdnL+8PhnRUs7y5ZAqYlgeTOGNP93rsnjCUBjRjwfHCCTOQPoyQHdfLE9bk/nZKvSq4rtJKInU7uh8PhG9vt9p0kvYjESybAlDrszLL8fue0IoK4Rna8oTxUJrO29U3ChH2ZJE+TbPV3jCQI63RaLoTillar9amLIcIF/Wg9GcmdKaX7nXNPGAyKooaPuQ6SJOSE4YKwgfRMbnktAtQIoJRgomuiwE2IgiRoRpd5OtUCsOfnef6Vi5WEDVWOSO4MIX6fP+PR6w3SYFBw0B+y3xuy1x+y1xuy2x2wuzJgtzfg8rleGhaRRRF+cvbs4MkAsLi46C5ZAtbyDlmW7TdDAkxUFTBrhENlUKO6sXTazOoiwzjAKq+pqsYY03NarfwF/f4wiairpcDIEh2SGnwFklma6XQcmf4zz/1visjpSw2UVhUs/xfC3U5RhK+TZLc7SL3ekN3egN3ugCsrfS6v9HnuXI9nznTtzJmuLS2tBDNypTv8EslscZHufCHzRcTSlAOAHOTa7vOnNFTKSu9TUkoPpsTHhBChomIgzAyWjICMzE45EBcWZvNeb/jR2dn2raUUgGM8elMEKMcBUO/A2iJV5xMHDx4cXzx4sDw2OA4ePMiDBw/WcxBAJiJFvz98b7ud39brDSMJX9UcmGy8lBIdG9nTODs3m/cHxTvn5/I3l45oU6pAqY8XP67YDQD7QPezVIPhcHhLShz0esO0stzn8nKvFPuzXTtztmtLSyu2tLSSTpeHnT69kk6dXh6Q5Llz/Y9X5TfdhApQ9gDuCCTe8Jjwniz3f1b0sP/en8hn94D+CCbdTJfdX5rBjPZ6vTQx9wyAXnU6M8MeAPR6zftEb9IbiojrdDohRjzbLHwyGbIUI0VVQCIZaWZloMUx50tInXHbtrm83wsfn5vL/6C2AWuFybKRzb/06vRWc/qWQULKM0u+bTd/5uHsC3v20B85IrG2tCGE6wH5dIxmpImoSBPZFQI2Kj6squ+VnoSsgiYISWt3WnMxJoQiUJ0TWlluM5K01eGSEWHbttlWvx8WZ2eyWzCqp66dI8gFOT8f/9rl7o6gFqlU552IpoEFe8G9x/Ov1JJQE6HfH76q3c7/PoRIM8o4f5goNI0CGmEjrxrpMutyJGKMLJOnsr+gdJECYooAZVAUt2+fy8+tFP8wP5f/7ghkOE+CtCYB6k29qF282fns7UEtitIhU6GYiXcqtNOQ+Jwv/Lj1jX2gOwRJdfRVFMVfZFn2zn5/GAD4KoU9j6tbZUybeabURKotfrVtqQoBrPKyOL91ttUfhM/NdrJ9VYp8QcOn623+eh//XJm9fRhSQoSDiTAQQlVGSxDdLuLuvfGK/s5DkLQPdFXI7PM8f1dRxL/pdFqZiCSWPBapCuylFpQFRbIUERmlmSg/Q4QcYe2lVFSJFc3KHEvKiY1MW+ZnW8Uw3Pv9/8r2i2xs86skoN78CzW+wqn7cGGWxFFFVegI8QAdoF5gwqSqDmIPW9A9952U40CpBmalJIRheL/P/at7/WEQIBvVChvNHjICGErRn5aEcfGjlndO1hyJsLAwmw8G4YuddnYzIEWJjWzM5WnTvx+BxBd34j5R+dAwJgOoMBEzlu1yEUAUWACQxIWQEpM+mZru+f2dnAfEKneTSLqslb1mOAyfmOm0MjPGWmNZi31dcWO1+WpXRiJVNXOSsJSIcV8RR8+WBi8fDMOXOu3spSIyvJjNjySg1uEXuvAyoyzaqFJc1rxlBJZXh6sOFZgwZl59MHvgxyf1+n1AvGPMPAGgIaTPZpm7YWWlH0XUr+7qqXVeqp4BgrSmcauKs7WwCM0sbd02lxUhHO60Tt0o8ovdzcT9EzagALqJKEiBNUpVxvLlTIAlgUWAEWAkYPAhpKjU5z72yvSJOyB2YLKCnrLM7S+K+E9zcx1vliJJmJUmjDQ0OFptvtxyHe2Vuj4CQSLJsLAwlw2L+JVOK3vJZjc/YQPqEPc6F25yJp9JEBOYlu0K49odBZBaCnR8bsLo1fkE++A/nnZ/Ou0ez549u6PTmTnsvX/68nIvVl2idSPEKDjgiC4mlQByFB6oyJYtM3AKFEX6Wp67F4rImcuGCteLvk6LP3HMPhBoUYROasGr/pREEFArSF9K3LhUB+cD49sOL2V/2SBCCa/1+Pjg0xFAntDr9ZOIOCurrqN2mEaxleMaKSjq1Hs5Kc6/veWd63bxka1b5dSlprsTKnAEEveA/kHLP0gJf5WLelISG3paU8ASG6pQGcgkrigsOvNvee5CfEM9Xw20yoz80CxeT/Bkq91ydS+hkWOIry4aT1p6MbPonN9Oi23v5d3z8zhddYJdUq4v54sCnyfhPYR/baAFFWQTjQ41Mt40kiIo+z41OYVPkm59aNl/dBeYHYOEOlDq9Yrfck7uGwxD2xJJUKUZ0VWun1Vz2EjyCG5fmPXnzg1fv3Vr+67LAXutGwrvA/QQJF0r4RMO/pYCKTqIZyOWZwWPj8oEUqsESRF6Bchw8+F++56GOngRiSuD8KJMcM9gEJBSGpvNJgG4ChGnqFqeZ3lI6eaF+fbdl0qEdYAN4SHADoB6Bb99qyHd5+h8AiIhMEjpGSoXNTo3wBLAqMIIxAARZp+6rl1c01CHePTo0WyunX0hJXlFp9Nyqlo6nXFjGGmNMJkjPFTMDEURohP92Ikz3V+vok93mSVgRHIFxJ6NE1sy3X4E1GdEpqSijrBmd9ZE+WMksqA5cQraKfhwzZeL9n/UMcfRo0ez3bt3h+Xlwetm51p/d2apW4jA1X2C45AfjdZS1CWJ6JzLnXM/ynz22zMz8oPNGsMLQFti+0D3VVyx7GxwIxG/58W5REuomqS4uu4zjvSgGsxSpO4wy+59frv3uEOQBNDt3r07kPRbtrTv6g+Kt21bmM1JCVijZwoCa0oCAB9TGojq40MsDh0/ztmDBzdXLt/QAzXXnpvx6cMYH0p02yFmgOgona1WPOZ+3WEnICxl4pzB/nlmq173wBLO1cnKgw/S790rcXl58KFOp/XKM2dXBiLi2QA6JhrPRjZCSFrszMzOhDC8e/u2zs2LpNt3kfXBDYGbhyBpD+gfCPLN5HgTlANShICZNPRUAJMyCedEAUTd0FIE9JndZTu0C8f8gQpDvPZapMXFRTc313rVYFDcs2XLXJtWukepOV8a2drMVNExISKu3+9187x908nT/Xft30R98KJEprbkz0Z4CUQ/W+IWrFNZ1D+I4BodtxRBgkUH510WP/m1Ivu9Bo5Qr2Om2y0eoPhnDfq9PiBZo7RYd8pP92ASQJiZmdkyGPRv+4Xts++7GM9wUfB2bcm/iuxzJvGPFaoJLhlZcUZGzc6GEv4yAiaCMoMXH2AxRX/LM2X4t7VkVSIrItIFws0pxYezLO8ACNKwCVObb5oe1+v1uqTedfr04AYRiYcPH/aXXQLG/UxHs2PYHXajeItH9taIFAXim73Nq49xpdiA2PLqA8Lr/yXmdzUCJSci6dy5wVOh+uVQxK2kFSRcowhUN6nWKiJS/tYlKZEROqBze67e3vrXRdJVanF5CdBUh10I783gbwsoo8VVzdHEOLMskawSzxOYQp3L0v5vFP5QPd/hw6VRPLHUvzZz7ospRpBmZPnDi6nC8aQ6EEFEZp1z308hXnPVVXOPXMg9brrCcwRI+0B3DNlrA9IhB80SGSvspERxUJ8LEgWRQAJhImKgRsJiko/9SiNQ2ru3jBavWOg85ERf4bxv11pFNl1sgxAcCVlGskdgJ7x+nGR+6NAhuUylsfWKJpCdQDaH9EWF25uQoqAEPazSB0PZ1GeNJmeRqu+MTkXsRJ6Fa75ZtL9dgm5jgPXUqd4bWp32u7u93rIArk4aRUqcop4fAJQQUbBsmuhsjSl8eMe29h+ezyheYo2v9LffgQwLrPxOkPRvAucTLKXKPSYAqXKNVtUFOHKVqgmWjHrFIGWffyKWr0IZKGkNsO7YMXNnMQh3dtqdLWaIqH59ZyxRtBpGrH7wV8HgyAb93nLms1eeONV7Uz3XT4EAZbQI0P07tp32LG4wsR8AziUwldZ/rBKQOo/g6KCIi2IxmT4ZbuZugJ3K1YtqGedv3956Y1EUi3mez6fEUJbQq0xRwelODQGgKq4Y9rt5lr1jaWnwstIzrCbCZaryluHt1zHzg4LxhgQ7BaqLMEs1yIla/4EEqT5XBKL4CIsp6bN+2YdPHjhQ7qHuBCepvZX2rSnZEfVuG4lQY8k1llT/bkPGKbrQ4EIIQVU+srS08ozKvrjLaAPW9gxPc/1rHfL7hkkzQ0oUaKpUoFkFYuN3hFUgEFpeWyHG9/6Q2e11MlZb8keWeRUGgy8DtpPEWdSbqcyKVu31ItSqtUYJ0nvXznP/vRT9b8zPy4mmZ7isdf7akn8rdR4qEF4uMHPqPOAUcCriFCzPWZ1TykPEqYq2YgBa4l/7tE56R+X6VURscZHu6i3y6EyrfZNz7lHvdAHgHIE5AbaoYA7CeVHMi+qcc37WZ1mn1WrNqIrOdPyTnAtfInllo5R/eSVgWhKensU/ItyN/WgFBK72BuNuYcCgNJp4ByARCnC2JQIgPzsobv8ROt+pJeHw4cN+79698eTJ/vNaHfe6fj8NIWU3jkBBMxGnUJhAVbxI2assEEuM7Y7bJsCHvfcfraXgfwB8AvTI5u7MmwAAAABJRU5ErkJggg==">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://rooklab.online/">
 <meta property="og:site_name" content="RookLab">
-<meta property="og:title" content="RookLab">
-<meta property="og:description" content="Quantitative trading infrastructure for digital asset markets.">
+<meta property="og:url" content="https://rooklab.online/">
+<meta property="og:title" content="RookLab | Crypto trading systems and infrastructure">
+<meta property="og:description" content="Engineering the infrastructure behind systematic crypto trading.">
+<meta property="og:image" content="https://rooklab.online/assets/logo.png">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234f8cff' d='M5 3h3v3h2V3h4v3h2V3h3v7l-2 2v6l2 2v2H5v-2l2-2v-6l-2-2V3z'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RookLab","url":"https://rooklab.online","email":"founder@rooklab.online","description":"Quantitative trading infrastructure for digital asset markets.","sameAs":["https://github.com/Rooklab-dev","https://www.linkedin.com/in/daniel-j-2b4a413a7"]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="twitter:site" content="@Rook_Lab_">
+<meta name="twitter:image" content="https://rooklab.online/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RookLab","url":"https://rooklab.online","logo":"https://rooklab.online/assets/logo.png","email":"founder@rooklab.online","sameAs":["https://github.com/Rooklab-dev","https://x.com/Rook_Lab_"]}</script>
 <style>
-:root{--bg:#060a14;--bg2:#0b1222;--card:#0e172b;--line:#1b2840;--line2:#2a3b5a;--text:#eaf0fb;--muted:#9aa9c3;--blue:#4f8cff;--cyan:#38d6e8;--mint:#3ee0b0;--amber:#f0c36a;
---head:Manrope,Inter,system-ui,sans-serif;--body:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--grad:linear-gradient(110deg,#4f8cff,#38d6e8 60%,#3ee0b0)}
+:root{--bg:#080a0e;--bg2:#0c0f15;--line:#1c222d;--line2:#2a3342;--text:#f0f3f8;--muted:#98a2b3;--dim:#667085;--accent:#5a45ff;--accent-t:#a99dff;--ok:#3ddc97;--warn:#f2b84b;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--w:1140px}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:var(--cyan);text-underline-offset:3px}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--cyan);color:#001018;padding:8px 14px;border-radius:8px;z-index:50}.skip:focus{left:8px}
-h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.025em;line-height:1.1}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent-t);text-underline-offset:3px}a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--accent-t);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 14px;z-index:60}.skip:focus{left:8px}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.12}
+.mono{font-family:var(--mono)}
 /* header */
-.hdr{position:sticky;top:0;z-index:20;background:rgba(6,10,20,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font:800 1.2rem var(--head);letter-spacing:-.02em}
-.brand svg{width:26px;height:26px;color:var(--blue)}
-.nav{display:flex;align-items:center;gap:28px;font-size:.95rem}
-.nav a{color:var(--muted);text-decoration:none;font-weight:500}.nav a:hover{color:var(--text)}.nav a.btn-p,.nav a.btn-p:hover{color:#021018;font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font:600 .98rem var(--body);text-decoration:none;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s}
-.btn-p{background:var(--grad);color:#021018}.btn-p:hover{transform:translateY(-1px);color:#021018}
-.btn-s{border-color:var(--line2);color:var(--text);background:rgba(255,255,255,.03)}.btn-s:hover{border-color:var(--cyan);color:var(--text)}
-.nav .btn{padding:7px 14px;font-size:.88rem}
-.lnk{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:500;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid var(--line2)}.lnk:hover{color:var(--text);border-color:var(--cyan)}
+.hdr{position:sticky;top:0;z-index:30;background:#080a0e;border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}.brand:hover{color:#fff}.brand img{display:block;height:30px;width:30px}
+.nav{display:flex;align-items:center;gap:26px;font-size:.92rem}
+.nav a{color:var(--muted);text-decoration:none;padding:6px 0}.nav a:hover{color:var(--text)}
+.nav a.cta-s{color:var(--text);border:1px solid var(--line2);padding:6px 14px;border-radius:6px}.nav a.cta-s:hover{border-color:var(--accent-t)}
+.menu{display:none;background:none;border:1px solid var(--line2);color:var(--text);border-radius:6px;width:44px;height:40px;cursor:pointer}
+.menu span,.menu span::before,.menu span::after{display:block;width:18px;height:2px;background:currentColor;margin:auto;position:relative}
+.menu span::before,.menu span::after{content:"";position:absolute;left:0}.menu span::before{top:-6px}.menu span::after{top:6px}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;transition:background .15s,border-color .15s}
+.btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:#6e5bff;color:#fff}
+.btn-s{border-color:var(--line2);color:var(--text)}.btn-s:hover{border-color:var(--accent-t);color:#fff}
 /* hero */
-.hero{position:relative;padding:96px 0 88px;background:radial-gradient(900px 480px at 82% -8%,rgba(79,140,255,.22),transparent 60%),radial-gradient(700px 420px at 8% 30%,rgba(62,224,176,.10),transparent 60%)}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.28;mask-image:radial-gradient(ellipse at 60% 20%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 60% 20%,#000,transparent 70%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--line2);border-radius:99px;font-size:.88rem;color:var(--muted);background:rgba(255,255,255,.03)}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
-.hero h1{margin-top:22px;font-size:clamp(2.5rem,5.4vw,4.4rem);font-weight:800}
-.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{margin:22px 0 0;max-width:52ch;color:var(--muted);font-size:1.15rem}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:38px;color:var(--muted);font-size:.9rem}
-.trust span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-right:9px;vertical-align:middle}
-.panel{border:1px solid var(--line2);border-radius:18px;background:linear-gradient(180deg,#0f1a31,#0a1224);box-shadow:0 30px 80px -20px rgba(79,140,255,.35),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden}
-.panel svg{display:block;width:100%;height:auto}
-.panel-note{padding:10px 18px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.hero{position:relative;padding:64px 0 64px;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;opacity:.35;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{font:500 .8rem var(--mono);color:var(--accent-t);letter-spacing:.06em;text-transform:uppercase}
+.hero h1{margin-top:18px;font-size:clamp(2rem,4vw,3.1rem);font-weight:700}
+.lead{margin:22px 0 0;max-width:54ch;color:var(--muted);font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.sys{border:1px solid var(--line2);border-radius:8px;background:var(--bg2)}
+.sys-h{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font:.76rem var(--mono);color:var(--dim)}
+.sys ul{list-style:none;margin:0;padding:0}
+.sys li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);font:.86rem var(--mono)}
+.sys li:last-child{border-bottom:0}
+.sys-f{padding:10px 16px;border-top:1px solid var(--line);font-size:.76rem;color:var(--dim)}
+.st{font:600 .7rem var(--mono);padding:2px 8px;border-radius:99px;border:1px solid;white-space:nowrap}
+.st.ok{color:var(--ok);border-color:rgba(61,220,151,.4)}.st.wa{color:var(--warn);border-color:rgba(242,184,75,.4)}.st.co{color:var(--accent-t);border-color:rgba(169,157,255,.4)}.st.fu{color:var(--muted);border-color:var(--line2);border-style:dashed}
 /* sections */
-.sec{padding:80px 0;border-top:1px solid var(--line)}
-.sec.alt{background:var(--bg2)}
-.kick{display:inline-block;margin-bottom:14px;font-size:.9rem;font-weight:600;color:var(--cyan)}
-.sec h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:800;max-width:20ch}
-.sec .sub{margin:18px 0 0;max-width:62ch;color:var(--muted);font-size:1.1rem}
-.grid{display:grid;gap:16px;margin-top:36px}
-.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
-.card{position:relative;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:border-color .2s}
-.card:hover{border-color:var(--line2)}
-.ico{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:rgba(79,140,255,.12);border:1px solid rgba(79,140,255,.3);color:var(--blue);margin-bottom:14px}
-.ico svg{width:19px;height:19px}
-.card h3{font-size:1.05rem;font-weight:700}
-.card p{margin:8px 0 0;color:var(--muted);font-size:.9rem;line-height:1.55}
-.tag{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:.78rem;font-weight:600}
-.tag::before{content:"";width:8px;height:8px;border-radius:50%}
-.t-ex{color:var(--mint)}.t-ex::before{background:var(--mint)}
-.t-pl{color:var(--amber)}.t-pl::before{border:2px solid var(--amber)}
-.t-fu{color:var(--muted)}.t-fu::before{border:2px dashed var(--muted)}
-.legend{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;font-size:.9rem;color:var(--muted)}
-/* stack */
-.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;list-style:none;padding:0}
-.stack li{padding:18px 18px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);position:relative}
-.stack li b{display:block;font:700 1rem var(--head)}
-.stack li small{display:block;margin-top:4px;color:var(--muted);font-size:.82rem;line-height:1.4}
-.stack li::before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--mint);margin-bottom:14px;box-shadow:0 0 12px rgba(62,224,176,.7)}
-.stack li.fu{border-style:dashed}.stack li.fu::before{background:transparent;border:2px dashed var(--muted);box-shadow:none}
-.pipe{display:flex;flex-wrap:wrap;gap:8px 0;margin:30px 0 0;padding:0;list-style:none;font-size:.85rem;font-weight:600}
-.pipe li{display:flex;align-items:center}
-.pipe li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);margin-right:8px}
-.pipe li:not(:last-child)::after{content:"";width:28px;border-top:1px solid var(--line2);margin:0 12px}
-.pipe li.fu{color:var(--muted)}.pipe li.fu::before{background:transparent;border:1.5px dashed var(--muted)}
-.pipe em{font-style:normal;font-weight:400;color:var(--muted);margin-left:5px}
-/* claude */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.flow{border:1px solid var(--line2);border-radius:18px;background:var(--card);padding:30px}
-.flow .step{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
-.flow .step:first-child{border-top:0;padding-top:0}.flow .step:last-child{padding-bottom:0}
-.flow .dot{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font:700 .9rem var(--head);background:rgba(79,140,255,.14);color:var(--blue)}
-.flow .dot.e{background:rgba(62,224,176,.14);color:var(--mint)}
-.flow b{display:block;font-weight:600}.flow span{color:var(--muted);font-size:.93rem}
-.rules{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:12px}
-.rules li{padding-left:30px;position:relative;color:var(--text)}
-.rules li::before{content:"";position:absolute;left:0;top:.5em;width:16px;height:10px;border-left:2px solid var(--mint);border-bottom:2px solid var(--mint);transform:rotate(-45deg) scale(.8)}
+.sec{padding:88px 0;border-bottom:1px solid var(--line)}.sec.alt{background:var(--bg2)}
+.sh{max-width:680px;margin-bottom:44px}
+.sh h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;margin-top:12px}
+.sh p{margin:16px 0 0;color:var(--muted)}
+.areas{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.area{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.area:nth-child(2n){border-right:0}.area:nth-last-child(-n+2){border-bottom:0}
+.area .n{font:.75rem var(--mono);color:var(--accent-t)}
+.area h3{font-size:1.2rem;margin:10px 0 8px;font-weight:650}
+.area p{margin:0;color:var(--muted);font-size:.96rem}
 /* project */
-.proj{display:grid;grid-template-columns:1.05fr 1fr;gap:0;border:1px solid var(--line2);border-radius:20px;overflow:hidden;background:var(--card);margin-top:48px}
-.proj .txt{padding:44px}
-.proj h3{font-size:2rem;font-weight:800;margin:14px 0 12px}
-.proj p{color:var(--muted);margin:0 0 14px}
-.code{background:#070d1a;border-left:1px solid var(--line);padding:30px;font:.84rem/1.8 ui-monospace,"SF Mono",Menlo,Consolas,monospace;color:#9fb4d6;overflow-x:auto}
-.code .c{color:#5b6f94}.code .k{color:var(--blue)}.code .s{color:var(--mint)}.code .d{display:flex;gap:7px;margin-bottom:18px}.code .d i{width:11px;height:11px;border-radius:50%;background:var(--line2)}
-/* roadmap */
-.road{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px;list-style:none;padding:0;position:relative}
-.road::before{content:"";position:absolute;top:9px;left:0;right:0;border-top:2px dashed var(--line2)}
-.road li{position:relative;padding-top:38px}
-.road li::before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
-.road li.fu::before{border-color:var(--muted);border-style:dashed}
-.road h3{font-size:1.1rem;font-weight:700}.road p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
-.note{margin-top:34px;color:var(--muted);font-size:.92rem;max-width:70ch}
-/* team */
-.team{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-top:28px;max-width:560px;padding:20px 22px;border:1px solid var(--line2);border-radius:14px;background:var(--card)}
-.avatar{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;background:var(--grad);color:#021018;font:800 1.7rem var(--head)}
-.team h3{font-size:1.15rem;font-weight:700}.team .role{color:var(--cyan);font-weight:600;font-size:.85rem;margin:2px 0 8px}
-.team p{margin:0 0 10px;color:var(--muted);font-size:.9rem;line-height:1.55}
-.links{display:flex;flex-wrap:wrap;gap:10px}
-/* contact */
-.band{position:relative;overflow:hidden;padding:24px 28px;border:1px solid var(--line2);border-radius:24px;background:radial-gradient(600px 300px at 90% 0,rgba(79,140,255,.28),transparent 60%),radial-gradient(500px 300px at 0 100%,rgba(62,224,176,.16),transparent 60%),var(--card);display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;border-radius:14px}
-.band h2{font-size:1.4rem;max-width:none}
-.band .sub{font-size:.92rem;margin-top:8px}
-.clist{list-style:none;margin:0;padding:0}
-.clist li{display:flex;gap:14px;padding:8px 0;font-size:.92rem;border-top:1px solid var(--line2)}.clist li:first-child{border-top:0}
-.clist span{width:76px;color:var(--muted);flex:none}
-/* footer */
-.ftr{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--muted);font-size:.9rem}
-.ftr p{margin:0 0 10px;max-width:90ch}
-@media(max-width:1000px){
-.hero .wrap,.split,.proj,.band{grid-template-columns:1fr}.proj .code{border-left:0;border-top:1px solid var(--line)}
-.g4,.stack,.road{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}.road::before{display:none}}
-@media(max-width:640px){
-.nav a:not(.btn){display:none}.hero{padding:60px 0}.sec{padding:68px 0}
-.g4,.g2,.g3,.stack,.road{grid-template-columns:1fr}.band{padding:34px 26px}.proj .txt{padding:28px}
-.team{grid-template-columns:1fr;padding:26px}.avatar{width:96px;height:96px;font-size:2.6rem}.clist li{flex-direction:column;gap:2px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.curve{animation:none!important}}
-.curve{stroke-dasharray:900;stroke-dashoffset:900;animation:dr 2.2s .3s ease-out forwards}
-@keyframes dr{to{stroke-dashoffset:0}}
+.proj{display:grid;grid-template-columns:1.3fr 1fr;gap:0;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+.proj .main{padding:40px}.proj h3{font-size:2rem;font-weight:700;margin:12px 0}
+.proj .main>p{color:var(--muted);margin:0 0 22px}
+.caps{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:10px}
+.caps li{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--line);font-size:.95rem}
+.facts{background:var(--bg);border-left:1px solid var(--line2);padding:40px 32px;font:.85rem/1.6 var(--mono)}
+.facts dt{color:var(--dim);margin-top:18px}.facts dt:first-child{margin-top:0}.facts dd{margin:2px 0 0;color:var(--text)}
+.honest{margin-top:22px;font-size:.88rem;color:var(--dim)}
+/* architecture */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;list-style:none;margin:0;padding:0;counter-reset:s}
+.flow li{position:relative;padding:16px 14px;border:1px solid var(--line2);border-radius:6px;background:var(--bg);font-size:.9rem;font-weight:600;counter-increment:s}
+.flow li::before{content:"0" counter(s);display:block;font:.7rem var(--mono);color:var(--accent-t);margin-bottom:8px}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-10px;top:50%;width:10px;border-top:1px solid var(--accent-t)}
+.flow small{display:block;margin-top:4px;color:var(--muted);font-weight:400;font-size:.78rem;line-height:1.4}
+.feed{margin-top:14px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.feed div{grid-column:2/4;padding:14px;border:1px dashed var(--accent-t);border-radius:6px;font-size:.88rem}
+.feed div b{display:block}.feed div span{color:var(--muted);font-size:.8rem}
+.note{margin-top:26px;font-size:.88rem;color:var(--dim);max-width:78ch}
+.plan{margin-top:0;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;padding:22px 24px;border:1px solid var(--line);border-radius:8px}
+.plan h3{font-size:1.05rem;margin-bottom:6px}.plan p{margin:0;color:var(--muted);font-size:.93rem}
+/* principles */
+.pr{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.pr div{border-top:2px solid var(--accent);padding-top:18px}
+.pr h3{font-size:1.1rem;font-weight:650}.pr p{margin:10px 0 0;color:var(--muted);font-size:.94rem}
+/* about / contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two p{margin:0 0 16px;color:var(--muted)}.two .sh p{margin:16px 0 0}
+.who{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:.92rem}
+.who img{width:40px;height:40px}
+.ct{list-style:none;margin:28px 0 0;padding:0}
+.ct li{display:flex;gap:18px;padding:13px 0;border-top:1px solid var(--line);font-size:.96rem}
+.ct li:last-child{border-bottom:1px solid var(--line)}.ct span{width:84px;flex:none;color:var(--dim);font:.8rem var(--mono);padding-top:3px}
+.copy{margin-left:auto;background:none;border:1px solid var(--line2);color:var(--muted);border-radius:5px;font:.75rem var(--mono);padding:3px 10px;cursor:pointer}.copy:hover{color:#fff;border-color:var(--accent-t)}
+.ftr{padding:36px 0 48px;color:var(--dim);font-size:.85rem}
+.ftr .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 30px}
+.ftr nav{display:flex;flex-wrap:wrap;gap:8px 22px}.ftr a{color:var(--muted);text-decoration:none}.ftr a:hover{color:#fff}
+.ftr p{flex-basis:100%;margin:6px 0 0;max-width:90ch}
+@media(max-width:960px){
+.hero .wrap,.proj,.two{grid-template-columns:1fr}.facts{border-left:0;border-top:1px solid var(--line2)}
+.flow{grid-template-columns:1fr}.flow li:not(:last-child)::after{right:auto;left:24px;top:auto;bottom:-10px;width:0;height:10px;border-top:0;border-left:1px solid var(--accent-t)}
+.feed{grid-template-columns:1fr}.feed div{grid-column:auto}.pr{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){
+.menu{display:block}.nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px 16px}
+.nav.open{display:flex}.nav a{padding:14px 0;border-bottom:1px solid var(--line)}.nav a.cta-s{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:14px 0}
+.hero{padding:56px 0}.sec{padding:60px 0}.areas{grid-template-columns:1fr}.area{border-right:0!important;border-bottom:1px solid var(--line)!important}.area:last-child{border-bottom:0!important}
+.pr{grid-template-columns:1fr}.proj .main,.facts{padding:26px 22px}.plan{grid-template-columns:1fr}.btn{flex:1 1 100%}.ct li{flex-direction:column;gap:2px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></g></symbol>
-<symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></g></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
-<symbol id="i-flask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2.2h12.4A1.5 1.5 0 0 0 19.5 19L14 9V3"/><path d="M7.5 15h9"/></g></symbol>
-</defs></svg>
-
 <header class="hdr"><div class="wrap">
-<a class="brand" href="#top" aria-label="RookLab home"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3h3v3h2V3h4v3h2V3h3v7l-2 2v6l2 2v2H5v-2l2-2v-6l-2-2V3z"/></svg>RookLab</a>
-<nav class="nav" aria-label="Primary">
-<a href="#platform">Platform</a><a href="#claude">Claude</a><a href="#project">Project</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a>
-<a class="btn btn-p" href="#contact">Contact</a>
+<a class="brand" href="#top" aria-label="RookLab, back to top"><img src="data:image/png;base64,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" alt="" width="30" height="30">RookLab</a>
+<button class="menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+<nav class="nav" id="nav" aria-label="Primary">
+<a href="#work">Work</a><a href="#engineering">Engineering</a><a href="#about">About</a>
+<a class="cta-s" href="#contact">Contact</a>
 </nav></div></header>
 
 <main id="main">
 <section class="hero" id="top"><div class="wrap">
 <div>
-<span class="pill"><i></i>Independent quantitative engineering lab</span>
-<h1>Quantitative trading infrastructure for <span class="grad">digital asset markets</span></h1>
-<p class="lead">One coherent stack for systematic trading: market data, strategy development, backtesting, validation, risk management and execution. Every stage testable, every result reproducible.</p>
-<div class="cta">
-<a class="btn btn-p" href="#platform">Explore the platform</a>
-<a class="btn btn-s" href="#claude">How we use Claude</a>
+<span class="eyebrow">Crypto trading systems &amp; infrastructure</span>
+<h1>Engineering the infrastructure behind systematic crypto trading.</h1>
+<p class="lead">RookLab builds trading systems, execution infrastructure and engineering tools for crypto markets: from strategy implementation and backtesting to exchange connectivity, risk controls and monitoring.</p>
+<div class="cta"><a class="btn btn-p" href="#work">Explore our work</a><a class="btn btn-s" href="https://github.com/Rooklab-dev" rel="noopener">View on GitHub</a></div>
 </div>
-<div class="trust"><span>Python core</span><span>Hyperliquid first</span><span>Testnet execution</span><span>Rust planned</span></div>
-</div>
-<figure class="panel" style="margin:0">
-<svg viewBox="0 0 560 360" role="img" aria-label="Illustrative backtest dashboard showing an equity curve, drawdown and walk-forward validation folds">
-<defs><linearGradient id="a" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#38d6e8" stop-opacity=".35"/><stop offset="1" stop-color="#38d6e8" stop-opacity="0"/></linearGradient><linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#3ee0b0"/></linearGradient></defs>
-<circle cx="24" cy="24" r="5" fill="#2a3b5a"/><circle cx="42" cy="24" r="5" fill="#2a3b5a"/><circle cx="60" cy="24" r="5" fill="#2a3b5a"/>
-<text x="90" y="28" fill="#9aa9c3" font-size="12" font-family="Inter,sans-serif">backtest / equity curve</text>
-<g stroke="#1b2840"><path d="M28 70H532M28 120H532M28 170H532M28 220H532"/></g>
-<path d="M28 215 L70 200 L110 208 L150 176 L190 184 L230 150 L270 158 L310 118 L350 130 L390 96 L430 104 L470 74 L532 62 L532 240 L28 240Z" fill="url(#a)"/>
-<path class="curve" d="M28 215 L70 200 L110 208 L150 176 L190 184 L230 150 L270 158 L310 118 L350 130 L390 96 L430 104 L470 74 L532 62" fill="none" stroke="url(#b)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<g fill="#38d6e8"><circle cx="532" cy="62" r="5"/><circle cx="532" cy="62" r="11" opacity=".2"/></g>
-<text x="28" y="262" fill="#9aa9c3" font-size="11" font-family="Inter,sans-serif">Drawdown</text>
-<path d="M28 276 L90 276 L110 292 L150 276 L230 276 L250 300 L290 276 L390 276 L410 288 L440 276 L532 276" fill="none" stroke="#f0c36a" stroke-width="2"/>
-<text x="28" y="324" fill="#9aa9c3" font-size="11" font-family="Inter,sans-serif">Walk-forward folds</text>
-<g><rect x="150" y="312" width="60" height="14" rx="4" fill="#4f8cff" opacity=".85"/><rect x="214" y="312" width="22" height="14" rx="4" fill="#3ee0b0"/><rect x="246" y="312" width="60" height="14" rx="4" fill="#4f8cff" opacity=".85"/><rect x="310" y="312" width="22" height="14" rx="4" fill="#3ee0b0"/><rect x="342" y="312" width="60" height="14" rx="4" fill="#4f8cff" opacity=".85"/><rect x="406" y="312" width="22" height="14" rx="4" fill="#3ee0b0"/></g>
-</svg>
-<figcaption class="panel-note">Illustration of the kind of output the framework produces. Not real trading results.</figcaption>
+<figure class="sys" style="margin:0" aria-label="Conceptual system architecture">
+<div class="sys-h"><span>conceptual architecture</span><span>pipeline</span></div>
+<ul>
+<li><span><b>01</b>&nbsp; Market data</span></li>
+<li><span><b>02</b>&nbsp; Data processing</span></li>
+<li><span><b>03</b>&nbsp; Strategy signals</span></li>
+<li><span><b>04</b>&nbsp; Risk checks</span></li>
+<li><span><b>05</b>&nbsp; Order execution</span></li>
+<li><span><b>06</b>&nbsp; Monitoring &amp; persistence</span></li>
+<li style="border-top:1px dashed var(--accent-t)"><span>Backtesting &amp; evaluation</span><span class="st co">informs 03</span></li>
+</ul>
+<figcaption class="sys-f">A conceptual pipeline, not a description of a deployed production system.</figcaption>
 </figure>
 </div></section>
 
-<section class="sec" id="platform"><div class="wrap">
-<span class="kick">Platform</span>
-<h2>The parts of systematic trading developers assemble by hand</h2>
-<p class="sub">Four capability areas, each already prototyped in Hyper-Engine, with further components planned.</p>
-<div class="grid g4">
-<article class="card"><div class="ico"><svg><use href="#i-db"/></svg></div><h3>Market data</h3><p>Reliable ingestion and storage of digital-asset market data. Trades, candles and funding rates planned.</p><span class="tag t-ex">Hyperliquid ingestion built</span></article>
-<article class="card"><div class="ico"><svg><use href="#i-chart"/></svg></div><h3>Trading systems</h3><p>Strategy signals, backtesting and comparison, with indicators written from scratch. Fee and slippage modeling next.</p><span class="tag t-ex">Prototype working</span></article>
-<article class="card"><div class="ico"><svg><use href="#i-shield"/></svg></div><h3>Risk and execution</h3><p>Position sizing, daily loss limits, open-position caps, order signing and testnet execution.</p><span class="tag t-ex">Testnet only</span></article>
-<article class="card"><div class="ico"><svg><use href="#i-flask"/></svg></div><h3>Quant tooling</h3><p>Out-of-sample tests, walk-forward validation, Monte Carlo simulation and Sharpe-based selection.</p><span class="tag t-ex">Prototype working</span></article>
-</div>
-<ol class="pipe" aria-label="Pipeline status"><li>Market data</li><li>Strategy</li><li>Backtesting</li><li>Validation</li><li>Risk</li><li>Execution <em>(testnet)</em></li><li class="fu">Rust core</li><li class="fu">AI interface</li></ol>
-<div class="legend"><span class="tag t-ex" style="margin:0">Built in Hyper-Engine</span><span class="tag t-pl" style="margin:0">Planned RookLab work</span><span class="tag t-fu" style="margin:0">Future</span></div>
-</div></section>
-
-<section class="sec alt" id="claude"><div class="wrap split">
-<div>
-<span class="kick">Claude</span>
-<h2>Claude writes the experiment. The engine produces the numbers.</h2>
-<p class="sub">We plan to use Claude to turn a researcher's idea into a structured, reproducible experiment, and to explain the results in plain language.</p>
-<ul class="rules">
-<li>A language model never produces results or places orders.</li>
-<li>Calculations, backtests and statistics stay in deterministic Python and Rust.</li>
-<li>Humans review generated strategy code before it runs.</li>
-<li>Execution stays on testnet until risk controls are proven.</li>
-</ul>
-<p class="note">API credits would fund building and evaluating the first version of this interface, and we will publish what worked and what did not.</p>
-</div>
-<div class="flow" aria-label="Planned Claude workflow">
-<div class="step"><span class="dot">1</span><div><b>Describe a hypothesis</b><span>Plain-language idea from the researcher.</span></div></div>
-<div class="step"><span class="dot">2</span><div><b>Claude drafts the experiment spec</b><span>Universe, signal, parameters, validation method.</span></div></div>
-<div class="step"><span class="dot e">3</span><div><b>Deterministic engine runs it</b><span>Backtest, walk-forward and Monte Carlo in code.</span></div></div>
-<div class="step"><span class="dot">4</span><div><b>Claude explains the output</b><span>Cites the engine's numbers and flags overfitting signs.</span></div></div>
-</div>
-</div></section>
-
-<section class="sec" id="project"><div class="wrap">
-<span class="kick">Project</span>
-<h2>Hyper-Engine</h2>
-<div class="proj">
-<div class="txt">
-<span class="tag t-ex" style="margin:0">Public project</span>
-<h3>Hyper-Engine</h3>
-<p>A Python algorithmic trading framework built for Hyperliquid. It covers market data, strategy development, backtesting, risk management and testnet execution.</p>
-<p>Not yet a commercial product. Execution runs on testnet only.</p>
-<a class="lnk" href="https://github.com/Rook0z?tab=repositories&amp;q=hyper" rel="noopener">View repository</a>
-</div>
-<div class="code" aria-hidden="true"><div class="d"><i></i><i></i><i></i></div>
-<span class="c"># pipeline</span><br><span class="k">data</span>     &rarr; hyperliquid.ingest()<br><span class="k">signals</span>  &rarr; indicators.from_scratch()<br><span class="k">test</span>     &rarr; backtest(<span class="s">"walk_forward"</span>)<br><span class="k">validate</span> &rarr; monte_carlo(trades)<br><span class="k">risk</span>     &rarr; limits.daily_loss()<br><span class="k">execute</span>  &rarr; testnet.sign_and_send()</div>
-</div>
-</div></section>
-
-<section class="sec alt" id="roadmap"><div class="wrap">
-<span class="kick">Roadmap</span>
-<h2>A direction, not a commitment</h2>
-<ol class="road">
-<li><h3>Infrastructure</h3><p>Market data, strategy and backtesting foundations.</p><span class="tag t-pl">Planned</span></li>
-<li><h3>Quantitative tooling</h3><p>Validation, risk and execution components.</p><span class="tag t-pl">Planned</span></li>
-<li class="fu"><h3>Developer platform</h3><p>Tools and interfaces for building systematic trading systems.</p><span class="tag t-fu">Future</span></li>
-<li class="fu"><h3>High-performance core</h3><p>Rust components for performance-critical workloads.</p><span class="tag t-fu">Future</span></li>
-</ol>
-<p class="note">We are not publishing dates, and the final shape of the first product is still being decided.</p>
-</div></section>
-
-<section class="sec" id="team" style="padding:56px 0"><div class="wrap">
-<span class="kick">Team</span>
-<h2 style="font-size:1.5rem">Founder-led and hands-on</h2>
-<div class="team">
-<div class="avatar" aria-hidden="true">R</div>
-<div>
-<h3>Rook0z</h3>
-<div class="role">Founder</div>
-<p>Python developer and author of Hyper-Engine. Builds RookLab end to end: market data, strategy logic, backtesting, validation, risk limits and execution.</p>
-<div class="links" style="gap:18px;font-size:.85rem"><a class="lnk" href="https://www.linkedin.com/in/daniel-j-2b4a413a7" rel="noopener">LinkedIn</a><a class="lnk" href="https://github.com/Rook0z" rel="noopener">GitHub</a></div>
-</div></div>
-</div></section>
-
-<section class="sec" id="contact" style="padding:0 0 56px;border-top:0"><div class="wrap">
-<div class="band">
-<div><h2>Contact</h2><p class="sub">Questions about our work or collaboration. Email is the fastest route.</p></div>
-<ul class="clist">
-<li><span>Email</span><a href="mailto:founder@rooklab.online">founder@rooklab.online</a></li>
-<li><span>LinkedIn</span><a href="https://www.linkedin.com/in/daniel-j-2b4a413a7" rel="noopener">linkedin.com/in/daniel-j-2b4a413a7</a></li>
-<li><span>GitHub</span><a href="https://github.com/Rooklab-dev" rel="noopener">github.com/Rooklab-dev</a></li>
-</ul>
+<section class="sec" id="engineering"><div class="wrap">
+<div class="sh"><span class="eyebrow">Engineering focus</span><h2>What we work on</h2><p>Four focus areas. They describe the direction of the work, not a catalogue of finished commercial products.</p></div>
+<div class="areas">
+<article class="area"><span class="n">01</span><h3>Trading systems</h3><p>Software architecture and components for systematic crypto trading, built to be tested in isolation.</p></article>
+<article class="area"><span class="n">02</span><h3>Execution infrastructure</h3><p>Exchange connectivity, authentication, order submission, position handling and execution workflows.</p></article>
+<article class="area"><span class="n">03</span><h3>Backtesting &amp; strategy engineering</h3><p>Strategy implementation, historical simulation and the tooling to evaluate results honestly.</p></article>
+<article class="area"><span class="n">04</span><h3>Risk &amp; observability</h3><p>Risk controls, trade logging, operational monitoring and visibility into system behavior.</p></article>
 </div></div></section>
+
+<section class="sec alt" id="work"><div class="wrap">
+<div class="sh"><span class="eyebrow">Featured project</span><h2>Hyper-Engine</h2><p>Our concrete example of the work: a Python algorithmic trading framework built for the Hyperliquid ecosystem.</p></div>
+<div class="proj">
+<div class="main">
+<span class="st ok">Public repository</span>
+<h3>Inspect the implementation</h3>
+<p>Hyper-Engine covers the path from exchange connectivity to monitored execution, including EMA, RSI, Bollinger Bands and VWAP indicators.</p>
+<ul class="caps">
+<li>Exchange API integration and request signing <span class="st ok">Implemented</span></li>
+<li>Market data processing and indicators <span class="st ok">Implemented</span></li>
+<li>Strategy signals, backtesting and evaluation <span class="st ok">Implemented</span></li>
+<li>Risk management controls <span class="st ok">Implemented</span></li>
+<li>Order execution on testnet <span class="st wa">Experimental</span></li>
+<li>Persistence and monitoring dashboard <span class="st ok">Implemented</span></li>
+</ul>
+<a class="btn btn-p" href="https://github.com/RookLab-dev/Hyper-Engine-" rel="noopener">View repository</a>
+<p class="honest">Engineering work, not proof of profitability. No live performance, customers or capital are claimed.</p>
+</div>
+<dl class="facts">
+<dt>language</dt><dd>Python</dd>
+<dt>venue</dt><dd>Hyperliquid</dd>
+<dt>execution</dt><dd>testnet only</dd>
+<dt>indicators</dt><dd>EMA, RSI, Bollinger Bands, VWAP</dd>
+<dt>stage</dt><dd>early, founder-built</dd>
+</dl>
+</div></div></section>
+
+<section class="sec" id="planned"><div class="wrap">
+<div class="plan"><span class="st fu">Planned</span><div><h3>AI-assisted development tooling</h3><p>We plan to use Claude to draft experiment specifications, review strategy code and explain test results. A language model will not compute results or place orders. Calculations stay in deterministic code, and a human reviews generated code before it runs.</p></div></div>
+</div></section>
+
+<section class="sec alt" id="principles"><div class="wrap">
+<div class="sh"><span class="eyebrow">Principles</span><h2>How we build</h2></div>
+<div class="pr">
+<div><h3>Correctness before complexity</h3><p>Build components that behave predictably and can be tested.</p></div>
+<div><h3>Risk-aware execution</h3><p>Treat risk checks, order handling and failure scenarios as core engineering concerns.</p></div>
+<div><h3>Observable systems</h3><p>Make system behavior easier to inspect, debug and understand.</p></div>
+<div><h3>Practical implementation</h3><p>Prioritize working software, clear documentation and measurable progress.</p></div>
+</div></div></section>
+
+<section class="sec" id="about"><div class="wrap two">
+<div class="sh" style="margin:0"><span class="eyebrow">About</span><h2>Independent and founder-led</h2></div>
+<div>
+<p>RookLab is an independent engineering initiative focused on crypto trading infrastructure. The goal is reliable systems and useful developer tools for systematic trading.</p>
+<p>It is early-stage. RookLab does not manage client funds or provide investment advice, and nothing here is a trading recommendation.</p>
+<div class="who"><div><strong>Rook0z</strong>, founder and engineer</div></div>
+</div></div></section>
+
+<section class="sec" id="contact" style="border-bottom:0"><div class="wrap two">
+<div class="sh" style="margin:0"><span class="eyebrow">Contact</span><h2>Building something for crypto markets?</h2><p>Get in touch about trading infrastructure, execution systems, integrations and engineering projects.</p></div>
+<ul class="ct">
+<li><span>email</span><a href="mailto:founder@rooklab.online" id="em">founder@rooklab.online</a><button type="button" class="copy" id="cp">Copy</button></li>
+</ul>
+</div></section>
 </main>
 
 <footer class="ftr"><div class="wrap">
-<p>&copy; <span id="year">2026</span> RookLab. Build systems. Test ideas. Ship infrastructure.</p>
-<p>RookLab builds software. It does not manage customer funds, provide financial advice or make investment recommendations, and nothing on this site is investment advice. RookLab is independent and is not affiliated with Hyperliquid.</p>
+<span>&copy; <span id="y">2026</span> RookLab</span>
+<nav aria-label="Footer"><a href="https://github.com/Rooklab-dev" rel="noopener">GitHub</a><a href="https://x.com/Rook_Lab_" rel="noopener">X</a></nav>
+<p>RookLab builds software. It does not manage client funds or offer investment advice. RookLab is independent and not affiliated with Hyperliquid.</p>
 </div></footer>
-<script>var y=document.getElementById("year");if(y)y.textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+var b=document.querySelector(".menu"),n=document.getElementById("nav");
+function t(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",o)}
+b.addEventListener("click",function(){t(!n.classList.contains("open"))});
+n.addEventListener("click",function(e){if(e.target.tagName==="A")t(false)});
+document.getElementById("cp").addEventListener("click",function(){var c=this,v="founder@rooklab.online";function d(){c.textContent="Copied";setTimeout(function(){c.textContent="Copy"},1800)}
+if(navigator.clipboard){navigator.clipboard.writeText(v).then(d,function(){c.textContent=v})}else{c.textContent=v}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")t(false)});
+</script>
 </body>
 </html>
